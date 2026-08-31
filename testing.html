@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        input{
+            border-width:0px 0px 3px opx;
+            border-color:aqua;
+            display: block;
+            margin-top:3%;
+            font-size:25;
+        }
+        input:required{
+            border-color:red;
+        }
+        input:optional{
+            border-color:blueviolet;
+        }
+        input:enabled{
+            background-color: transparent;
+            box-shadow:0 0 3px black;
+        }
+        input:disabled{
+            background-color:grey;
+            border-width:0px;
+
+        }
+        input:valid{
+            background-color: aqua;
+            color:rgb(26, 34, 41);
+        }
+        input:invalid{
+            background-color: burlywood;
+            color:rgb(202, 44, 44)
+        }
+        input:in-range{
+            background-color: aquamarine;
+        }
+        input:out-of-range{
+            background-color:pink;
+        }
+        input:placeholder-shown{
+            outline:3px solid blue;
+        }
+        input:read-only{
+            border-width:0px;
+            box-shadow:0 0 0 transparent;
+            background-color:grey;
+            color:white;
+        }
+        input:focus{
+            box-shadow: 0 0 3px 2px black;
+        }
+    </Style>
+</head>
+<body>
+    <input type="text" placeholder="first name" required>
+    <input type="text" placeholder="middle name" optional>
+    <input type="text" placeholder="last name" required>
+    <input type="text"  disabled value="Mathura">
+    <input type="email" placeholder="mailid" >
+    <input type="number"  min="1" max="12345">
+    <input type="text" value="Mr." readonly >
+
+</body>
+</html>

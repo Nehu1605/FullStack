@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        h2+p{
+            color: blue;
+        }
+        h2~p{
+            text-transform: uppercase;
+        }
+
+        section h2{
+            color:yellow;
+            text-shadow: 1px 1px 0 black;
+        }
+        #mypara{
+            color:blueviolet;
+        }
+        .para{
+            color:blue;
+        }
+        p{
+            color: red !important;
+        }
+        button:focus{
+            background-color: black;
+            color:white;
+        }
+        a:visited{
+            color:rgb(35, 222, 209);
+        }
+        a:link{
+            text-decoration: none;
+        }
+        input:checked{
+            accent-color: gold;
+            box-shadow: 1px 1px 5px black;
+        }
+        li:nth-child(2n){
+            background-color: yellow;
+        }
+        li:not(:hover){
+            color:red;
+        }
+        div:has(h2){
+            background-color: black;
+            color:white;
+        }
+        .div:is(h2,h3){
+            background-color:rgb(49, 106, 156) ;
+            color:black;
+        }
+        .face {
+            width: 300px;
+            height: 300px;
+            background-color: #f5cfa0;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        /* Moustache */
+        .moustache::before,
+        .moustache::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background-color: black;
+            top: 150px;
+            clip-path: polygon(
+                                0% 35%,
+                                15% 10%,
+                                45% 20%,
+                                70% 45%,
+                                90% 40%,
+                                100% 15%,
+                                95% 55%,
+                                75% 80%,
+                                45% 95%,
+                                15% 75%,
+                                0% 55%
+                            );
+
+            transform: rotate(-5deg);
+        }
+
+        /* Left side */
+        .moustache::before {
+            left: 55px;
+            border-radius: 100% 0 100% 20%;
+            border-radius: 0 0 70px 70px;
+
+            clip-path: polygon(
+                                100% 35%,
+                                85% 10%,
+                                55% 20%,
+                                30% 45%,
+                                10% 40%,
+                                0% 15%,
+                                5% 55%,
+                                25% 80%,
+                                55% 95%,
+                                85% 75%,
+                                100% 55%
+                                );
+
+                transform: rotate(5deg);
+            }
+
+        }
+
+        /* Right side */
+        .moustache::after {
+            right: 55px;
+            border-radius: 0 100% 20% 100%;
+            transform: rotate(-15deg);
+        }
+    </style>
+</head>
+<body>
+
+    <section>
+        <h2>Heading 1</h2>
+        <p>Para1</p>
+        <p>Para2</p>
+
+        <div>
+            <h2>Heading 2</h2>
+        </div>
+    </section>
+
+    <p class="para" id="mypara" >Hello World</p>
+    <button>Click me!!</button>
+    <a href="#1">link</a>
+    <input type="checkbox" checked/>
+    <input type="checkbox"/>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+
+    </ul>
+    <div>
+        <p>lorem ipsum<h2>uytrewertyuiuhygfdfyuio</h2></p>
+        
+    </div>
+    <div>
+        <h3>trewsdrkjhgfxc</h3>
+    </div>
+    <div class="face">
+        <div class="moustache"></div>
+    </div>
+</body>
+</html>
