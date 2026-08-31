@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Chronicle</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f1ea; 
+            color: #111111;
+            font-family: 'Georgia', serif; 
+        }
+
+        .newspaper-header {
+            text-align: center;
+            border-bottom: 4px double #111; 
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+
+        .meta-top, .meta-bottom {
+            font-family: Arial, sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .meta-bottom {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #111;
+            margin-top: 10px;
+            padding-top: 5px;
+        }
+
+        .newspaper-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin: 10px 0;
+            letter-spacing: -1px;
+        }
+
+        .newspaper-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr; 
+            gap: 20px;
+        }
+
+        .main-story {
+            border-right: 1px solid #ccc;
+            padding-right: 20px;
+        }
+
+        .main-story h2 {
+            font-size: 2rem;
+            margin-top: 0;
+        }
+
+        .story-img {
+            background-color: #ddd;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border: 1px solid #111;
+        }
+
+        .lead-text {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .main-story p {
+            column-count: 2; 
+            column-gap: 20px;
+            text-align: justify;
+            line-height: 1.5;
+        }
+
+        /* Sidebar Styles */
+        .sidebar-stories h3 {
+            font-size: 1.3rem;
+            margin-top: 0;
+        }
+
+        .side-story p {
+            text-align: justify;
+            font-size: 0.95rem;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 15px 0;
+        }
+
+        .bottom-features {
+            grid-column: 1 / span 2; 
+            border-top: 4px double #111;
+            margin-top: 20px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .feature-card {
+            flex: 1;
+        }
+
+        .feature-card h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+    
+        @media (max-width: 768px) {
+            .newspaper-grid {
+                grid-template-columns: 1fr; /* Stack into a single column */
+            }
+            .main-story {
+                border-right: none;
+                padding-right: 0;
+            }
+            .main-story p {
+                column-count: 1;
+            }
+            .bottom-features {
+                grid-column: 1;
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+ 
+    <header class="newspaper-header">
+        <div class="meta-top">Vol. CXXIV No. 42</div>
+        <h1 class="newspaper-title">THE DAILY CHRONICLE</h1>
+        <div class="meta-bottom">
+            <span>Vrindavan, Tuesday, August 18, 2026</span>
+            <span>$1.50</span>
+        </div>
+    </header>
+
+ 
+    <main class="newspaper-grid">
+        
+    
+        <article class="main-story">
+            <h2>BREAKING: MONUMENTAL DISCOVERY SHAKES THE WORLD</h2>
+            <div class="story-img">
+                <p>[ Image Placeholder ]</p>
+            </div>
+            <p class="lead-text">This is the most important story of the day. It spans multiple columns to grab the reader's attention immediately.</p>
+            <p>Newspapers use justified text and multiple columns to make stories easy to scan. You can add more paragraphs here to fill out the column space and make it look authentic.</p>
+        </article>
+
+        <aside class="sidebar-stories">
+            <article class="side-story">
+                <h3>Local Markets Hit Record Highs</h3>
+                <p>Stocks soared this morning following the economic announcements. Investors are highly optimistic about the upcoming quarter.</p>
+            </article>
+            <hr>
+            <article class="side-story">
+                <h3>Weather Forecast: Sunny</h3>
+                <p>Expect clear skies and warm temperatures for the rest of the week. Perfect conditions for outdoor activities.</p>
+            </article>
+        </aside>
+
+    
+        <section class="bottom-features">
+            <article class="feature-card">
+                <h4>Technology Trends</h4>
+                <p>How artificial intelligence is changing everyday design workflows.</p>
+            </article>
+            <article class="feature-card">
+                <h4>Arts & Culture</h4>
+                <p>A look into the upcoming modern art gallery exhibition opening this Friday.</p>
+            </article>
+            <article class="feature-card">
+                <h4>Sports Update</h4>
+                <p>Local team secures their spot in the finals after a thrilling weekend match.</p>
+            </article>
+        </section>
+
+    </main>
+
+</body>
+</html>
