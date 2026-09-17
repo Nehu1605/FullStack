@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+.heading{
+    @apply text-3xl font-bold underline text-center bg-blue-900
+}
+@theme{
+    --color-purple:#efffef ;
+}
