@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tech Summit 2026</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #F8FAFC;
+            color: #111827;
+        }
+
+        .nav {
+            height: 70px;
+            padding: 0 30px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav h2 {
+            color: #2563EB;
+        }
+
+        .link {
+            display: flex;
+            gap: 20px;
+        }
+
+        .link a {
+            text-decoration: none;
+            color: #475569;
+        }
+
+        .menu {
+            display: none;
+        }
+
+        .hero {
+            height: 600px;
+            background: linear-gradient(#0008, #0008),
+                url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200");
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin: 20px 0;
+        }
+
+        .hero p {
+            font-size: 20px;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .btn button {
+            height: 48px;
+            padding: 0 24px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .reg {
+            background: #2563EB;
+            color: white;
+            border: none;
+        }
+
+        .view {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .sec {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .sec h2 {
+            font-size: 32px;
+        }
+
+        .box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 24px;
+            border: 1px solid #CBD5E1;
+            border-radius: 12px;
+        }
+
+        .card p {
+            color: #475569;
+        }
+
+
+        .spk {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .person {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #CBD5E1;
+            border-radius: 12px;
+        }
+
+        .person img {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+        }
+
+        .person h3 {
+            font-size: 18px;
+        }
+
+        .person p {
+            font-size: 14px;
+            color: #475569;
+        }
+
+
+        .sch {
+            background: white;
+            padding: 20px;
+            border: 1px solid #CBD5E1;
+            border-radius: 12px;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            padding: 20px 0;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .time {
+            color: #2563EB;
+            font-weight: bold;
+        }
+
+
+        @media (max-width: 1023px) {
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .spk {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 639px) {
+
+            .nav {
+                padding: 0 20px;
+            }
+
+            .link {
+                display: none;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .hero {
+                height: 500px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .btn {
+                flex-direction: column;
+            }
+
+            .box {
+                grid-template-columns: 1fr;
+            }
+
+            .spk {
+                grid-template-columns: 1fr;
+            }
+
+            .row {
+                grid-template-columns: 90px 1fr;
+            }
+
+            .sec h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav">
+
+        <h2>GLA University</h2>
+
+        <div class="link">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Events</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <button class="menu">☰</button>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <div>
+
+            <p>Tech • Learn • Connect</p>
+
+            <h1>TECH SUMMIT 2026</h1>
+
+            <p>Innovating the Future of Technology</p>
+
+            <div class="btn">
+                <button class="reg">Register Now</button>
+                <button class="view">View Schedule</button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="sec">
+
+        <h2>Event Details</h2>
+
+        <div class="box">
+
+            <div class="card">
+                <h3>Date</h3>
+                <p>15 Oct 2026</p>
+                <p>Friday</p>
+            </div>
+
+            <div class="card">
+                <h3>Venue</h3>
+                <p>GLA University</p>
+                <p>Mathura</p>
+            </div>
+
+            <div class="card">
+                <h3>Speakers</h3>
+                <p>25+</p>
+                <p>Industry Experts</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="sec">
+
+        <h2>Featured Speakers</h2>
+
+        <div class="spk">
+
+            <div class="person">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg">
+                <h3>Ananya Sharma</h3>
+                <p>AI Researcher</p>
+            </div>
+
+            <div class="person">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg">
+                <h3>Rahul Mehta</h3>
+                <p>CTO</p>
+            </div>
+
+            <div class="person">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg">
+                <h3>Priya Nair</h3>
+                <p>Product Lead</p>
+            </div>
+
+            <div class="person">
+                <img src="https://randomuser.me/api/portraits/men/45.jpg">
+                <h3>Vikram Singh</h3>
+                <p>Cloud Architect</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="sec">
+
+        <h2>Event Schedule</h2>
+
+        <div class="sch">
+
+            <div class="row">
+                <div class="time">10:00</div>
+                <div>Opening Ceremony</div>
+            </div>
+
+            <div class="row">
+                <div class="time">11:00</div>
+                <div>AI & Future</div>
+            </div>
+
+            <div class="row">
+                <div class="time">12:30</div>
+                <div>Lunch</div>
+            </div>
+
+            <div class="row">
+                <div class="time">02:00</div>
+                <div>Cloud Computing</div>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>

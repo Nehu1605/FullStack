@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ShopEase</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #F8FAFC;
+            color: #111827;
+            font-family: Arial;
+            font-size: 14px;
+        }
+
+        /* Navbar */
+        .nav {
+            background: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .nav h2 {
+            color: #2563EB;
+            margin: 0;
+        }
+
+        .link {
+            display: flex;
+            gap: 25px;
+        }
+
+        .link a {
+            text-decoration: none;
+            color: #6B7280;
+        }
+
+        .menu {
+            display: none;
+        }
+
+        /* Page */
+        .page {
+            display: flex;
+            gap: 32px;
+            padding: 30px 5%;
+        }
+
+        /* Sidebar */
+        .side {
+            width: 240px;
+            flex-shrink: 0;
+            background: white;
+            padding: 20px;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            height: fit-content;
+        }
+
+        .side h3 {
+            font-size: 16px;
+        }
+
+        .side label {
+            display: block;
+            margin: 15px 0;
+            color: #6B7280;
+        }
+
+        /* Products */
+        .main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .top h1 {
+            font-size: 28px;
+        }
+
+        .top input {
+            padding: 10px;
+            border: 1px solid #E5E7EB;
+            border-radius: 6px;
+            width: 200px;
+        }
+
+        .box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        /* Product card */
+        .card {
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 16px;
+            width: 100%;
+            max-width: 260px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 5px 15px #00000015;
+        }
+
+        .pic {
+            height: 220px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .card:hover img {
+            transform: scale(1.08);
+        }
+
+        .tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #DC2626;
+            color: white;
+            padding: 5px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .new {
+            background: #2563EB;
+        }
+
+        .cat {
+            font-size: 13px;
+            color: #6B7280;
+        }
+
+        .name {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .rate {
+            color: #F59E0B;
+        }
+
+        .price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price strong {
+            font-size: 20px;
+        }
+
+        .old {
+            font-size: 14px;
+            color: #6B7280;
+            text-decoration: line-through;
+        }
+
+        .btn {
+            padding: 12px;
+            background: #2563EB;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: auto;
+        }
+
+        .btn:hover {
+            background: #1D4ED8;
+        }
+
+        /* Tablet */
+        @media (min-width: 640px) and (max-width: 1023px) {
+            .page {
+                flex-direction: column;
+            }
+
+            .side {
+                width: 100%;
+            }
+
+            .side label {
+                display: inline-block;
+                margin-right: 20px;
+            }
+
+            .box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card {
+                max-width: none;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 639px) {
+            .link {
+                display: none;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .page {
+                padding: 20px;
+            }
+
+            .side {
+                display: none;
+            }
+
+            .top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .top input {
+                width: 100%;
+            }
+
+            .box {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                max-width: none;
+            }
+        }
+
+        /* Large screen */
+        @media (min-width: 1280px) {
+            .box {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="nav">
+
+        <h2>ShopEase</h2>
+
+        <div class="link">
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <button class="menu">☰</button>
+
+    </nav>
+
+
+    <div class="page">
+
+        <!-- Filter -->
+        <aside class="side">
+
+            <h3>Filters</h3>
+
+            <hr>
+
+            <h3>Category</h3>
+
+            <label>
+                <input type="checkbox"> Electronics
+            </label>
+
+            <label>
+                <input type="checkbox"> Clothing
+            </label>
+
+            <label>
+                <input type="checkbox"> Shoes
+            </label>
+
+            <label>
+                <input type="checkbox"> Accessories
+            </label>
+
+            <hr>
+
+            <h3>Price</h3>
+
+            <label>
+                <input type="checkbox"> Under ₹1000
+            </label>
+
+            <label>
+                <input type="checkbox"> ₹1000 - ₹5000
+            </label>
+
+            <label>
+                <input type="checkbox"> Above ₹5000
+            </label>
+
+        </aside>
+
+
+        <!-- Products -->
+        <main class="main">
+
+            <div class="top">
+
+                <h1>Our Products</h1>
+
+                <input type="text" placeholder="Search products">
+
+            </div>
+
+
+            <div class="box">
+
+                <!-- Product 1 -->
+                <div class="card">
+
+                    <div class="pic">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30a?w=500" alt="Headphones">
+                        <span class="tag">SALE</span>
+                    </div>
+
+                    <span class="cat">Electronics</span>
+
+                    <h3 class="name">Wireless Headphones</h3>
+
+                    <div class="rate">★★★★★ (4.5)</div>
+
+                    <div class="price">
+                        <strong>₹1,999</strong>
+                        <span class="old">₹2,999</span>
+                    </div>
+
+                    <button class="btn">Add to Cart</button>
+
+                </div>
+
+
+                <!-- Product 2 -->
+                <div class="card">
+
+                    <div class="pic">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Watch">
+                        <span class="tag new">NEW</span>
+                    </div>
+
+                    <span class="cat">Accessories</span>
+
+                    <h3 class="name">Classic Watch</h3>
+
+                    <div class="rate">★★★★★ (4.8)</div>
+
+                    <div class="price">
+                        <strong>₹2,499</strong>
+                        <span class="old">₹3,499</span>
+                    </div>
+
+                    <button class="btn">Add to Cart</button>
+
+                </div>
+
+
+                <!-- Product 3 -->
+                <div class="card">
+
+                    <div class="pic">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Shoes">
+                        <span class="tag">SALE</span>
+                    </div>
+
+                    <span class="cat">Shoes</span>
+
+                    <h3 class="name">Running Shoes</h3>
+
+                    <div class="rate">★★★★☆ (4.2)</div>
+
+                    <div class="price">
+                        <strong>₹1,499</strong>
+                        <span class="old">₹2,499</span>
+                    </div>
+
+                    <button class="btn">Add to Cart</button>
+
+                </div>
+
+
+                <!-- Product 4 -->
+                <div class="card">
+
+                    <div class="pic">
+                        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500" alt="Camera">
+                    </div>
+
+                    <span class="cat">Electronics</span>
+
+                    <h3 class="name">Digital Camera</h3>
+
+                    <div class="rate">★★★★★ (4.7)</div>
+
+                    <div class="price">
+                        <strong>₹5,999</strong>
+                        <span class="old">₹6,999</span>
+                    </div>
+
+                    <button class="btn">Add to Cart</button>
+
+                </div>
+
+
+                <!-- Product 5 -->
+                <div class="card">
+
+                    <div class="pic">
+                        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500" alt="Bag">
+                        <span class="tag new">NEW</span>
+                    </div>
+
+                    <span class="cat">Accessories</span>
+
+                    <h3 class="name">Hand Bag</h3>
+
+                    <div class="rate">★★★★☆ (4.3)</div>
+
+                    <div class="price">
+                        <strong>₹1,299</strong>
+                        <span class="old">₹1,999</span>
+                    </div>
+
+                    <button class="btn">Add to Cart</button>
+
+                </div>
+
+
+                <!-- Product 6 -->
+                <div class="card">
+
+                    <div class="pic">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500" alt="T-shirt">
+                    </div>
+
+                    <span class="cat">Clothing</span>
+
+                    <h3 class="name">Cotton T-Shirt</h3>
+
+                    <div class="rate">★★★★★ (4.6)</div>
+
+                    <div class="price">
+                        <strong>₹799</strong>
+                        <span class="old">₹999</span>
+                    </div>
+
+                    <button class="btn">Add to Cart</button>
+
+                </div>
+
+
+                <!-- Product 7 -->
+                <div class="card">
+
+                    <div class="pic">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500" alt="Smart watch">
+                        <span class="tag">SALE</span>
+                    </div>
+
+                    <span class="cat">Electronics</span>
+
+                    <h3 class="name">Smart Watch</h3>
+
+                    <div class="rate">★★★★☆ (4.4)</div>
+
+                    <div class="price">
+                        <strong>₹2,999</strong>
+                        <span class="old">₹3,999</span>
+                    </div>
+
+                    <button class="btn">Add to Cart</button>
+
+                </div>
+
+
+                <!-- Product 8 -->
+                <div class="card">
+
+                    <div class="pic">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Sports shoes">
+                    </div>
+
+                    <span class="cat">Shoes</span>
+
+                    <h3 class="name">Sports Shoes</h3>
+
+                    <div class="rate">★★★★★ (4.5)</div>
+
+                    <div class="price">
+                        <strong>₹1,899</strong>
+                        <span class="old">₹2,499</span>
+                    </div>
+
+                    <button class="btn">Add to Cart</button>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
